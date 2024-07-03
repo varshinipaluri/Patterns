@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class PatternPrinting {
+    public static void printPattern(int n) {
+        for (int i = 1; i < n; i++) {
+            String spaces = " ".repeat(n - i);
+            String stars = "*".repeat(2 * i - 1);
+            System.out.println(spaces + stars);
+        }
+
+        if (n > 0) {
+            System.out.println("*".repeat(2 * n - 1));
+        }
+
+        for (int i = n - 1; i > 0; i--) {
+            String spaces = " ".repeat(n - i);
+            String stars = "*".repeat(2 * i - 1);
+            System.out.println(spaces + stars);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter value of n: ");
+        int n = scanner.nextInt();
+        scanner.close();
+
+        printPattern(n);
+    }
+}
+

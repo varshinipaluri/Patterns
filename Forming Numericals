@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int s=2*n-1;
+        int arr[][]=new int[s][s];
+        if(n==1){
+            System.out.println(1);
+        }
+        else{
+        for(int i=0;i<n*2-1;i++){
+            for(int j=0;j<n*2-1;j++){
+                int value = n - Math.min(Math.min(i, 2 * n  -2- i), Math.min(j, 2 * n  - j));
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+        }
+    }
+}
